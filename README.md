@@ -1,15 +1,14 @@
-Exercices pratiques cadrés sur le module 3 Modèle linéaire : Maturation
-des ovocytes
+Maturation des ovocytes
 ================
 
 <!--- do not edit readme.md ---->
 
 # Avant-propos
 
-Cette séance d’exercices est en cours de développement. N’hésitez pas à
-vérifier le lien suivant afin de voir si des modifications n’ont pas été
+Cette séance d’exercices est susceptible d’évoluer. N’hésitez pas à
+vérifier le lien suivant afin de voir si des modifications ont été
 apportées dans les consignes :
-<https://github.com/BioDataScience-Course/B03Ga_ovocyte>
+<https://github.com/BioDataScience-Course/B03Ia_ovocyte>
 
 # Introduction
 
@@ -30,7 +29,7 @@ skimr::skim(ovo)
 ```
 
 |                                                  |      |
-| :----------------------------------------------- | :--- |
+|:-------------------------------------------------|:-----|
 | Name                                             | ovo  |
 | Number of rows                                   | 280  |
 | Number of columns                                | 3    |
@@ -47,25 +46,25 @@ Data summary
 **Variable type: character**
 
 | skim\_variable | n\_missing | complete\_rate | min | max | empty | n\_unique | whitespace |
-| :------------- | ---------: | -------------: | --: | --: | ----: | --------: | ---------: |
+|:---------------|-----------:|---------------:|----:|----:|------:|----------:|-----------:|
 | ind            |          0 |              1 |   1 |   1 |     0 |         7 |          0 |
 
 **Variable type: factor**
 
 | skim\_variable | n\_missing | complete\_rate | ordered | n\_unique | top\_counts    |
-| :------------- | ---------: | -------------: | :------ | --------: | :------------- |
+|:---------------|-----------:|---------------:|:--------|----------:|:---------------|
 | mat            |          0 |              1 | FALSE   |         2 | 0: 174, 1: 106 |
 
 **Variable type: numeric**
 
-| skim\_variable | n\_missing | complete\_rate | mean |   sd | p0 |  p25 | p50 | p75 | p100 | hist  |
-| :------------- | ---------: | -------------: | ---: | ---: | -: | ---: | --: | --: | ---: | :---- |
-| conc           |          0 |              1 | 1.54 | 1.41 |  0 | 0.25 |   1 |   3 |    4 | ▇▂▂▂▂ |
+| skim\_variable | n\_missing | complete\_rate | mean |   sd |  p0 |  p25 | p50 | p75 | p100 | hist  |
+|:---------------|-----------:|---------------:|-----:|-----:|----:|-----:|----:|----:|-----:|:------|
+| conc           |          0 |              1 | 1.54 | 1.41 |   0 | 0.25 |   1 |   3 |    4 | ▇▂▂▂▂ |
 
-La variable `mat` est a deux niveaux :
+La variable `mat` est à deux niveaux :
 
-  - 0 : l’ovocyte n’est pas en maturation
-  - 1 : l’ovocye a maturé
+-   0 : l’ovocyte n’est pas en maturation
+-   1 : l’ovocyte a maturé
 
 On dénombre pour chaque concentration d’hypoxantine le nombre suivant
 d’ovocyte :
@@ -92,22 +91,26 @@ Ce projet est un projet **individuel**, **court** et **cadré** qui doit
 1.  Résumez le tableau de données afin d’obtenir la proportion
     d’ovocytes ayant maturé.
 
-2.  Réalisez un graphique permetant de représenter la proportion
+2.  Réalisez un graphique permettant de représenterla proportion
     d’ovocytes ayant maturé en fonction de la concentration
-    d’hypoxantine .
+    d’hypoxantine.
 
-3.  Réalisez un modèle linéaire génaralisé afin d’étudier la proportion
+3.  Réalisez un modèle linéaire généralisé afin d’étudier la proportion
     d’ovocytes ayant maturé.
 
 4.  Consignez vos résultats dans un document structuré au format R
-    Markdorwn. Utilisez le template (`ovocytes.Rmd`) mis à votre
+    Markdown. Utilisez le template (`ovocytes.Rmd`) mis à votre
     disposition dans le dossier `docs`. Ce document doit contenir :
-    
-      - une courte introduction sur l’hypoxantine et l’effet de cette
-        substance sur les ovocytes.
-      - une section analyse avec la description des données et la
-        réalisation du modèle linéaire généralisé. Chaque tableau et
-        graphique doit avoir une légende claire et précise comme montré
-        dans l’exemple. Tout comme dans les revues scientifiques, les
-        tableaux et graphiques doivent être cité dans le texte.
-      - une section discussion et conclusion
+
+-   une courte introduction sur l’hypoxantine et l’effet de cette
+    substance sur les ovocytes.
+-   une section analyse avec la description des données et la
+    réalisation du modèle linéaire généralisé. Chaque tableau et
+    graphique doit avoir une légende claire et précise comme montré dans
+    l’exemple. Tout comme dans les revues scientifiques, les tableaux et
+    graphiques doivent être cité dans le texte.
+-   une section discussion et conclusion
+
+5.  Knittez votre rapport et assurez-vous qu’il génère le format HTML
+    final sans erreurs (à la fin de l’exercice, votre document doit
+    compiler sans aucune erreur).
