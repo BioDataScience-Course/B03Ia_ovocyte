@@ -15,19 +15,19 @@ SciViews::R("model", lang = "fr")
 
 # Introduction
 
-<!--# Introduisez en maximum 5 phrases, l'hypoxantine et l'effet de cette substance sur les ovocytes, sans oublier de citer vos sources.-->
+<!--# Introduisez en maximum 5 phrases, l'hypoxanthine et l'effet de cette substance sur les ovocytes, sans oublier de citer vos sources.-->
 
 Exemple d'une citation [@Anderson1935]
 
 # Analyse
 
-<!--% Importez le tableau `ovocyte.rds` et assignez le à `ovo`. Vérifiez le type des variables.-->
+<!--% Importez le tableau `ovocyte.rds` et assignez-le à `ovo`. Vérifiez le type des variables.-->
 
 ```{r import}
 
 ```
 
-<!--% Réalisez un tableau et un graphique pertinent proposant la proportion d'ovocytes ayant maturé en fonction de la concentration d'hypoxantine.-->
+<!--% Réalisez un tableau et un graphique pertinent proposant la proportion d'ovocytes ayant maturé en fonction de la concentration d'hypoxanthine.-->
 
 ```{r tab}
 
@@ -39,7 +39,7 @@ Exemple d'une citation [@Anderson1935]
 
 <!-- Interprétez le tableau et le graphique ci-dessus en 3 à 4 phrases maximum.-->
 
-<!-- Réalisez un modèle linéaire généralisé pertinent de la variable `mat` en fonction de `conc`. Etudiez ce modèle à l'aide du résumé du modèle.-->
+<!-- Réalisez un modèle linéaire généralisé pertinent de la variable `mat` en fonction de `conc`. Étudiez ce modèle à l'aide du résumé du modèle..-->
 
 ```{r glm}
 
@@ -51,6 +51,6 @@ Exemple d'une citation [@Anderson1935]
 
 <!--% Discutez de vos résultats et apportez des conclusions ici en 2 à 3 maximum.-->
 
-<!--# Ne modifiez, ni n"écrivez rien ci-dessous. Les références seront automatiquement compilée à la fin du document après le titre "Références" -->
+<!--# Ne modifiez, ni n"écrivez rien ci-dessous. Les références seront automatiquement compilées à la fin du document après le titre "Références" -->
 
 # Références {.unnumbered}

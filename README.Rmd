@@ -19,7 +19,7 @@ ovo <- read("data/ovocyte.rds") %>.%
 conc <- sort(unique(ovo$conc))
 ```
 
-Le jeu de données `ovocyte.rds` porte sur la maturation d'ovocytes. Afin de faire maturer les ovocytes, différentes concentrations connue d'hypoxantine sont testées. Ce tableau de `r nrow(ovo)` observations comprend `r ncol(ovo)` variables. Les concentrations suivantes en hypoxantine sont employée afin d'étudier la maturation des ovocytes : `r paste0(conc, collapse = ", ")`. La variable `mat` comprend `r nlevels(ovo$mat)` niveaux :
+Le jeu de données `ovocyte.rds` porte sur la maturation d'ovocytes. Afin de faire maturer les ovocytes, différentes concentrations connues d'hypoxanthine sont testées. Ce tableau de `r nrow(ovo)` observations comprend `r ncol(ovo)` variables. Les concentrations suivantes en hypoxanthine sont employées afin d'étudier la maturation des ovocytes : `r paste0(conc, collapse = ", ")`. La variable `mat` comprend `r nlevels(ovo$mat)` niveaux :
 
 -   `r levels(ovo$mat)[[1]]` : l'ovocyte n'est pas en maturation
 -   `r levels(ovo$mat)[[2]]` : l'ovocyte a maturé
@@ -28,7 +28,10 @@ Le jeu de données `ovocyte.rds` porte sur la maturation d'ovocytes. Afin de fai
 
 Ce projet est un projet **individuel**, **court** et **cadré**.
 
-TODO
+Dans ce projet, vous devrez :
+
+-   Visualiser et décrire vos observations
+-   Ajuster et interpréter un modèles linéaires généralisés
 
 # Consignes
 
