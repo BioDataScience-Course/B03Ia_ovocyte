@@ -3,69 +3,54 @@ title: "___"
 author: "___"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 bibliography: references.bib
-lang: "fr"
-output: bookdown::html_document2 # Peut être remplacé par pdf_document2,...
+output: html_document 
 ---
+
+<!--# Complétez l'entête YAML.-->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-SciViews::R
+SciViews::R("model", lang = "fr")
 ```
-
-# Résumé {-}
-
-<!--% Un paragraphe ou deux... -->
-
 
 # Introduction
 
-<!--% Introduisez le sujet, sans oublier de citer [@Anderson1935] -->
+<!--# Introduisez en maximum 5 phrases, l'hypoxantine et l'effet de cette substance sur les ovocytes, sans oublier de citer vos sources.-->
 
-Blablabla [@Anderson1935]
-
+Exemple d'une citation [@Anderson1935]
 
 # Analyse
 
-<!--% Réalisez vos analyses ici en utilisant la syntace bookdown de renvoi aux figures et tables telle qu'illustrée ci-dessous à l'aide d'une figure et d'une table à partir du jeu de données iris (que vous remplacerez par vos analyses d'ovocytes) -->
+<!--% Importez le tableau `ovocyte.rds` et assignez le à `ovo`. Vérifiez le type des variables.-->
 
 ```{r import}
-iris <- read("iris", package = "datasets", lang = "fr")
+
 ```
 
-<!--# Le renvoi vers une figure se fait avec \@ref(fig:label) où label est le nom du chunk -->
+<!--% Réalisez un tableau et un graphique pertinent proposant la proportion d'ovocytes ayant maturé en fonction de la concentration d'hypoxantine.-->
 
-On observe sur la figure \@ref(fig:scatterplot)
+```{r tab}
 
-<!--# La légende d'une figure se place dans l'entête du chunk avec l'argument fig.cap= -->
-
-```{r scatterplot, fig.cap="Variation de la longueur des pétales en fonction de la longueur des sépales pour trois espèces d'iris."}
-chart(data = iris, petal_length ~ sepal_length %col=% species) +
-  geom_point()
 ```
 
-<!--# De même, le renvoi vers une table se fait avec \@ref(tab:label) où label est le nom du chunk qui génère la table -->
+```{r plot}
 
-La tableau \@ref(tab:kable) met en évidence ...
-
-<!--# Pour un tableau formatté avec légende, vous utilisez knitr::kable(..., caption = "ma légende...") -->
-
-```{r kable}
-iris %>.%
-  group_by(., species) %>.%
-  summarise(.,
-    pl_mean = round(mean(petal_length), 3),
-    pl_sd = round(sd(petal_length), 3)) %>.%
-  knitr::kable(., 
-    caption = "Moyennes et écart-types [cm] de trois espèces d' Iris",
-    col.names = c("Espèces", "Moyenne [cm]", "Ecart-type [cm]"), align = "c")
 ```
 
+<!-- Interprétez le tableau et le graphique ci-dessus en 3 à 4 phrases maximum.-->
+
+<!-- Réalisez un modèle linéaire généralisé pertinent de la variable `mat` en fonction de `conc`. Etudiez ce modèle à l'aide du résumé du modèle.-->
+
+```{r glm}
+
+```
+
+<!-- Interprétez le modèle ci-dessus en 3 à 5 phrases maximum.-->
 
 # Discussion et conclusions
 
-<!--% Discutez de vos résultats et apportez des conclusions ici en 2 à 3 paragraphes -->
+<!--% Discutez de vos résultats et apportez des conclusions ici en 2 à 3 maximum.-->
 
+<!--# Ne modifiez, ni n"écrivez rien ci-dessous. Les références seront automatiquement compilée à la fin du document après le titre "Références" -->
 
-<!--% Ne modifiez, ni n"écrivez rien ci-dessous. Les références seront automatiquement compilée à la fin du document après le titre "Références" -->
-
-# Références {-}
+# Références {.unnumbered}

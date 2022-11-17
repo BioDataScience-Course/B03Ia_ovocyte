@@ -1,116 +1,38 @@
-Maturation des ovocytes
+Modélisation de la maturation d’ovocytes
 ================
 
 <!--- do not edit readme.md ---->
 
-# Avant-propos
+# Présentation des données
 
-Cette séance d’exercices est susceptible d’évoluer. N’hésitez pas à
-vérifier le lien suivant afin de voir si des modifications ont été
-apportées dans les consignes :
-<https://github.com/BioDataScience-Course/B03Ia_ovocyte>
-
-# Introduction
-
-``` r
-ovo <- read("data/ovocyte.rds") %>.%
-  mutate(., mat = as.factor(mat))
-```
-
-Le jeu de données `ovocyte.rds` que vous allez utiliser porte sur la
-maturation d’ovocytes. Afin de faire maturer les ovocytes, différentes
-concentrations connue d’hypoxantine sont testées.
-
-La fonction suivante, vous donne une représentation des données
-contenues dans `ovocyte.rds` :
-
-``` r
-skimr::skim(ovo)
-```
-
-|                                                  |      |
-|:-------------------------------------------------|:-----|
-| Name                                             | ovo  |
-| Number of rows                                   | 280  |
-| Number of columns                                | 3    |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |      |
-| Column type frequency:                           |      |
-| character                                        | 1    |
-| factor                                           | 1    |
-| numeric                                          | 1    |
-| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |      |
-| Group variables                                  | None |
-
-Data summary
-
-**Variable type: character**
-
-| skim\_variable | n\_missing | complete\_rate | min | max | empty | n\_unique | whitespace |
-|:---------------|-----------:|---------------:|----:|----:|------:|----------:|-----------:|
-| ind            |          0 |              1 |   1 |   1 |     0 |         7 |          0 |
-
-**Variable type: factor**
-
-| skim\_variable | n\_missing | complete\_rate | ordered | n\_unique | top\_counts    |
-|:---------------|-----------:|---------------:|:--------|----------:|:---------------|
-| mat            |          0 |              1 | FALSE   |         2 | 0: 174, 1: 106 |
-
-**Variable type: numeric**
-
-| skim\_variable | n\_missing | complete\_rate | mean |   sd |  p0 |  p25 | p50 | p75 | p100 | hist  |
-|:---------------|-----------:|---------------:|-----:|-----:|----:|-----:|----:|----:|-----:|:------|
-| conc           |          0 |              1 | 1.54 | 1.41 |   0 | 0.25 |   1 |   3 |    4 | ▇▂▂▂▂ |
-
-La variable `mat` est à deux niveaux :
+Le jeu de données `ovocyte.rds` porte sur la maturation d’ovocytes. Afin
+de faire maturer les ovocytes, différentes concentrations connue
+d’hypoxantine sont testées. Ce tableau de 280 observations comprend 3
+variables. Les concentrations suivantes en hypoxantine sont employée
+afin d’étudier la maturation des ovocytes : 0, 0.25, 0.5, 1, 2, 3, 4. La
+variable `mat` comprend 2 niveaux :
 
 -   0 : l’ovocyte n’est pas en maturation
 -   1 : l’ovocyte a maturé
 
-On dénombre pour chaque concentration d’hypoxantine le nombre suivant
-d’ovocyte :
-
-``` r
-ovo %>.%
-  group_by(., as.factor(conc)) %>.%
-  summarise(., number = length(mat)) %>.%
-  spread(., key = `as.factor(conc)`, value = number)
-```
-
-    ## # A tibble: 1 x 7
-    ##     `0` `0.25` `0.5`   `1`   `2`   `3`   `4`
-    ##   <int>  <int> <int> <int> <int> <int> <int>
-    ## 1    40     40    40    40    40    40    40
-
 # Objectif
 
-Ce projet est un projet **individuel**, **court** et **cadré** qui doit
-être **terminé pour la fin du module 3**.
+Ce projet est un projet **individuel**, **court** et **cadré**.
+
+TODO
 
 # Consignes
 
-1.  Résumez le tableau de données afin d’obtenir la proportion
-    d’ovocytes ayant maturé.
+Au sein du fichier `ovocytes.Rmd` qui se trouve dans le dossier `docs/`,
+réalisez et interprétez le modèle linéaire généralisé demandé. Une fois
+le travail réalisé, **assurez-vous que le document compile en un rapport
+final HTML sans erreurs via le bouton Knit**, sinon, corrigez les
+erreurs qui s’affichent avant votre soumission finale.
 
-2.  Réalisez un graphique permettant de représenterla proportion
-    d’ovocytes ayant maturé en fonction de la concentration
-    d’hypoxantine.
+Faites attention à bien **citer vos sources**. Le plagiat est, comme
+toujours, bien évidemment interdit. Si vous avez été aidé par quelqu’un
+(un ou une autre étudiant•e ou enseignant•e) pour l’une ou l’autre
+partie de votre projet, vous devez le ou la citer.
 
-3.  Réalisez un modèle linéaire généralisé afin d’étudier la proportion
-    d’ovocytes ayant maturé.
-
-4.  Consignez vos résultats dans un document structuré au format R
-    Markdown. Utilisez le template (`ovocytes.Rmd`) mis à votre
-    disposition dans le dossier `docs`. Ce document doit contenir :
-
--   une courte introduction sur l’hypoxantine et l’effet de cette
-    substance sur les ovocytes.
--   une section analyse avec la description des données et la
-    réalisation du modèle linéaire généralisé. Chaque tableau et
-    graphique doit avoir une légende claire et précise comme montré dans
-    l’exemple. Tout comme dans les revues scientifiques, les tableaux et
-    graphiques doivent être cité dans le texte.
--   une section discussion et conclusion
-
-5.  Knittez votre rapport et assurez-vous qu’il génère le format HTML
-    final sans erreurs (à la fin de l’exercice, votre document doit
-    compiler sans aucune erreur).
+Ce projet correspond au template :
+<https://github.com/BioDataScience-Course/B03Ia_ovocyte>
